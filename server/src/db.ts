@@ -18,6 +18,7 @@ const connectToDB = async () => {
       database: process.env.PG_DATABASE,
       entities: [User, Post, Friend, Comment],
       synchronize: true, //! remove in prod
+      ssl: true, // add this if server requires SSL
     })
     console.log('Connected to PostgreSQL')
   } catch (error) {
